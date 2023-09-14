@@ -1,5 +1,14 @@
+const personalMoviesDB = {
+    count: null,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false,
+};
+
 const numberOfFilms = +prompt('Number of watched films: ', '');
 if (numberOfFilms) {
+    personalMoviesDB.count = numberOfFilms;
     if (numberOfFilms<=10)
         alert('Good! We have a lot of movies to watch!');
     else if (numberOfFilms<=50)
@@ -7,14 +16,6 @@ if (numberOfFilms) {
     else
         alert('Good job! A lot of movies was watched! You are a total master!');
 }
-
-const personalMoviesDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  private: false,
-};
 
 for (let i = 0; i < 2; i += 1) {
     let watchedMovie;
