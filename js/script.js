@@ -21,8 +21,8 @@ for (let i = 0; i < 2; i += 1) {
     let watchedMovie;
     while (true) {
         watchedMovie = prompt('Which last movie do you watch: ', '');
-        if(watchedMovie) break;
-        alert('Please enter a movie name!');
+        if(watchedMovie && watchedMovie.length <= 50) break;
+        alert('Please enter a movie name!(50 characters max)');
     }
     let movieRating
     while (watchedMovie) {
