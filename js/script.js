@@ -1,4 +1,12 @@
 const numberOfFilms = +prompt('Number of watched films: ', '');
+if (numberOfFilms) {
+    if (numberOfFilms<=10)
+        alert('Good! We have a lot of movies to watch!');
+    else if (numberOfFilms<=50)
+        alert('Good job! A lot of movies was watched, but we have more for you!');
+    else
+        alert('Good job! A lot of movies was watched! You are a total master!');
+}
 
 const personalMoviesDB = {
   count: numberOfFilms,
@@ -23,6 +31,7 @@ for (let i = 0; i < 2; i += 1) {
     }
     personalMoviesDB.movies[watchedMovie] = movieRating;
 }
+
 
 console.log(personalMoviesDB);
 
