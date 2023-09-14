@@ -51,7 +51,7 @@ class PersonalMoviesDB {
     _askQuestion(question, warning){
         let answer
         while (true) {
-            answer = prompt(question, '');
+            answer = prompt(question, '').trim();
             if(answer && answer.length <= 50) break;
             alert(warning);
         }
