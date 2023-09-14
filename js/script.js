@@ -7,6 +7,12 @@ class PersonalMoviesDB {
         this.private = private_state;
     }
 
+    showMyDB() {
+        if (!this.private) {
+            console.log(this);
+        }
+    }
+
     askCountWatchedFilms() {
         while (true) {
             const numberOfFilms = +prompt('Number of watched films: ', '');
@@ -34,6 +40,14 @@ class PersonalMoviesDB {
         }
     }
 
+    askAboutGenres() {
+        for (let i = 0; i < 3; i += 1) {
+            let genre = this._askQuestion('Which genre do you like: ',
+                'Please enter a genre name!(50 characters max)')
+            this.genres.push(genre);
+        }
+    }
+
     _askQuestion(question, warning){
         let answer
         while (true) {
@@ -56,5 +70,5 @@ const personalMoviesDB = new PersonalMoviesDB(
 
 personalMoviesDB.askCountWatchedFilms();
 personalMoviesDB.askLastWatchedFilmsExperience();
-
-console.log(personalMoviesDB);
+personalMoviesDB.showMyDB();
+personalMoviesDB.askAboutGenres();
